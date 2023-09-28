@@ -112,7 +112,7 @@ const MyState = (props) => {
       setLoading(false);
       setTimeout(() => {
         // window.location.href = "/dashboard";
-        Navigate("/dashboard");
+        <Navigate to="/dashboard" replace={true} />;
         // navigate("/dashboard");
       }, 800);
     } catch (error) {
