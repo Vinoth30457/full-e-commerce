@@ -85,7 +85,8 @@ export default App;
 //user
 
 export const ProtectedRoutes = ({ children }) => {
-  if (localStorage.getItem("user")) {
+  const user = JSON.parse(localStorage.getItem("user"));
+  if (user) {
     return children;
   } else {
     return <Navigate to="/login" />;
