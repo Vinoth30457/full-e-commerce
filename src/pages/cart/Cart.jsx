@@ -78,7 +78,7 @@ function Cart() {
         // console.log(response);
         toast.success("Payment Successful");
         localStorage.removeItem("cart");
-        window.location.reload(false);
+
         const paymentId = response.razorpay_payment_id;
         const orderInfo = {
           cartItems,
