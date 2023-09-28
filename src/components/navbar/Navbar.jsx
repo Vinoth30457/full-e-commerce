@@ -343,13 +343,20 @@ const Navbar = () => {
                       {/* <img alt="preview image" src={photoURL} /> */}
                     </a>
                   ) : (
-                    <a
-                      onClick={login}
-                      className="text-sm font-medium text-gray-700 cursor-pointer  "
+                    // <a
+                    //   onClick={login}
+                    //   className="text-sm font-medium text-gray-700 cursor-pointer  "
+                    //   style={{ color: mode === "dark" ? "white" : "" }}
+                    // >
+                    //   Log In
+                    // </a>
+                    <Link
+                      to={"/login"}
+                      className="text-sm font-medium text-gray-700 "
                       style={{ color: mode === "dark" ? "white" : "" }}
                     >
-                      Log In
-                    </a>
+                      login
+                    </Link>
                   )}
                 </div>
 
