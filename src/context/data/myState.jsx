@@ -16,10 +16,11 @@ import {
   query,
   setDoc,
 } from "firebase/firestore";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const MyState = (props) => {
   const [mode, setMode] = useState("light");
+  const navigate = useNavigate();
 
   const toggleMode = () => {
     if (mode === "light") {
@@ -112,7 +113,8 @@ const MyState = (props) => {
       setLoading(false);
       setTimeout(() => {
         // window.location.href = "/dashboard";
-        Navigate("/dashboard");
+        // Navigate("/dashboard");
+        navigate("/dashboard");
       }, 800);
     } catch (error) {
       setLoading(false);
