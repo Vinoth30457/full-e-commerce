@@ -117,6 +117,7 @@ import myContext from "../../context/data/myContext";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../redux/cartSlice";
 import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 
 function ProductCard() {
   const context = useContext(myContext);
@@ -164,18 +165,15 @@ function ProductCard() {
                       color: mode === "dark" ? "white" : "",
                     }}
                   >
-                    <div
-                      onClick={() =>
-                        (window.location.href = `/productinfo/${id}`)
-                      }
-                      className="flex justify-center cursor-pointer"
-                    >
-                      <img
-                        className=" rounded-2xl w-full h-80 p-2 hover:scale-110 transition-scale-110  duration-300 ease-in-out"
-                        src={imageUrl}
-                        alt="blog"
-                      />
-                    </div>
+                    <Link to={`/productinfo/${id}`}>
+                      <div className="flex justify-center cursor-pointer">
+                        <img
+                          className=" rounded-2xl w-full h-80 p-2 hover:scale-110 transition-scale-110  duration-300 ease-in-out"
+                          src={imageUrl}
+                          alt="blog"
+                        />
+                      </div>
+                    </Link>
                     <div className="p-5 border-t-2">
                       <h2
                         className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1"
