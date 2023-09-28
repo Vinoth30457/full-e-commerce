@@ -165,7 +165,7 @@ function ProductCard() {
                       color: mode === "dark" ? "white" : "",
                     }}
                   >
-                    <Link to={`/productinfo/${id}`}>
+                    <Link to={`/productinfo/${(<Link to={{ id }}></Link>)}`}>
                       <div className="flex justify-center cursor-pointer">
                         <img
                           className=" rounded-2xl w-full h-80 p-2 hover:scale-110 transition-scale-110  duration-300 ease-in-out"
