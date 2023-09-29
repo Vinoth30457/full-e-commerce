@@ -31,7 +31,6 @@ export default function Modal({
           type="button"
           onClick={openModal}
           className="w-full  bg-violet-600 py-2 text-center rounded-lg text-white font-bold"
-          style={{ marginBottom: "4rem" }}
         >
           Buy Now
         </button>
