@@ -16,7 +16,6 @@ import {
   query,
   setDoc,
 } from "firebase/firestore";
-import { Navigate } from "react-router-dom";
 
 const MyState = (props) => {
   const [mode, setMode] = useState("light");
@@ -111,8 +110,8 @@ const MyState = (props) => {
       getProductData();
       setLoading(false);
       setTimeout(() => {
-        // window.location.href = "/dashboard";
-        <Navigate to="/dashboard" replace={true} />;
+        window.location.href = "/dashboard";
+
         // navigate("/dashboard");
       }, 800);
     } catch (error) {
