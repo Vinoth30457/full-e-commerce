@@ -9,7 +9,7 @@ const HeroSection = () => {
       /> */}
       <img
         src={hero}
-        alt=""
+        alt="hero image"
         style={{ width: "100%", height: "70vh", objectFit: "cover" }}
       />
     </div>
