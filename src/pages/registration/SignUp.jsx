@@ -47,7 +47,7 @@ function SignUp() {
 
   const signup = async () => {
     setLoading(true);
-    if (name === "" || email === "" || password === "" || imageUpload === "") {
+    if (name === "" || email === "" || password === "" || photo === "") {
       return toast.error("All fields are required");
     }
 
@@ -98,13 +98,32 @@ function SignUp() {
         </div>
         <div className="profile-container">
           <img src={photo ? photo : img} alt="" className="profile-photo" />
-          <div className=" bg-gray-600 mb-4 px-2 py-2 w-full lg:w-[20em] rounded-lg text-white placeholder:text-gray-200 outline-none flex  ">
+          <div className=" bg-gray-600 mb-4 px-2 py-2 w-full lg:w-[20em] rounded-lg text-white placeholder:text-gray-200 outline-none flex items-center ">
+            <label htmlFor="file">Profile Photo</label>
             <input
               type="file"
               id="file"
               // value={photo}
-              onChange={(event) => {
-                setImageUpload(event.target.files[0]);
+              // onChange={(event) => {
+              //   setImageUpload(event.target.files[0]);
+              // }}
+              onChange={(e) => {
+                // setImageUpload(e.target.files[0]);
+                setLoading(true);
+
+                // if (!imageUpload) return;
+
+                const imageRef = ref(
+                  storage,
+                  `product/${e.target.files[0].name}`
+                );
+                uploadBytes(imageRef, e.target.files[0]).then((snapshot) => {
+                  getDownloadURL(snapshot.ref).then((url) => {
+                    setPhoto(url);
+                    console.log(url);
+                    setLoading(false);
+                  });
+                });
               }}
               // onChange={(e) => {
               //   if (e.target.files[0]) {
@@ -120,32 +139,6 @@ function SignUp() {
                 textAlign: "center",
               }}
             />
-          </div>
-
-          <div
-            className="btn-sign"
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <button
-              onClick={() => {
-                setLoading(true);
-                uploadFile();
-              }}
-              style={{
-                backgroundColor: "green",
-                textAlign: "center",
-                marginBottom: "1rem",
-                padding: "0.5rem 1rem",
-                border: "none",
-                color: "white",
-              }}
-            >
-              Upload Profile
-            </button>
           </div>
         </div>
 

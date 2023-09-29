@@ -156,7 +156,15 @@ const Navbar = () => {
                       </a>
                     </div>
                   ) : (
-                    ""
+                    <div className="flow-root">
+                      <Link
+                        to={"/login"}
+                        className="-m-2 block p-2 font-medium text-gray-900"
+                        style={{ color: mode === "dark" ? "white" : "" }}
+                      >
+                        login
+                      </Link>
+                    </div>
                   )}
                   {/* <div className="flow-root">
                     <Link

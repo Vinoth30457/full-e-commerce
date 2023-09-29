@@ -86,6 +86,24 @@ function Login() {
             </Link>
           </h2>
         </div>
+        <div
+          className="credential"
+          style={{ color: "white", marginTop: "1rem" }}
+        >
+          <hr style={{ marginBottom: "1rem" }} />
+          <h1 style={{ fontSize: "1.5rem", textAlign: "center" }}>
+            {" "}
+            Admin credential{" "}
+          </h1>
+          <p>Email : vinoth30457@gmail.com</p>
+          <p style={{ marginBottom: "1rem" }}>Password : 123456</p>
+          <h1 style={{ fontSize: "1.5rem", textAlign: "center" }}>
+            {" "}
+            User credential{" "}
+          </h1>
+          <p>Email : user@gmail.com</p>
+          <p>Password : 123456</p>
+        </div>
       </div>
     </div>
   );

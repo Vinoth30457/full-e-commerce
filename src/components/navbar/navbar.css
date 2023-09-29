@@ -59,6 +59,7 @@
     align-items: center;
     justify-content: center;
     gap: 1rem;
+    top: 3rem;
    
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
