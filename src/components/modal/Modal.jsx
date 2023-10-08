@@ -26,7 +26,10 @@ export default function Modal({
   // console.log(name,address,pincode,phoneNumber)
   return (
     <>
-      <div className="  text-center rounded-lg text-white font-bold">
+      <div
+        className="  text-center rounded-lg text-white font-bold"
+        style={{ marginBottom: "2rem" }}
+      >
         <button
           type="button"
           onClick={openModal}

@@ -25,7 +25,7 @@ function Cart() {
     // console.log(temp)
   }, [cartItems]);
 
-  const shipping = parseInt(50);
+  const shipping = totalAmount ? parseInt(50) : 0;
   const grandTotal = shipping + totalAmount;
 
   // add to cart
